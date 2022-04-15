@@ -4,7 +4,7 @@ import { Preview } from './Preview'
 const App = () => {
 
 
-const[content,setContent]=useState("hello newton")
+const[content,setContent]=useState("hello world")
 const[fontSize,setFontSize]=useState(10)
 const [padding,setPadding]=useState(5)
 
