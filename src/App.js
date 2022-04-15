@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
 
-function App() {
+import { Preview } from './Preview'
+const App = () => {
+
+
+const[content,setContent]=useState("hello newton")
+const[fontSize,setFontSize]=useState(10)
+const [padding,setPadding]=useState(5)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="main">
+      <div>
+<input  type='text'  id="contentInput" value={content} onChange={(e)=>setContent(e.target.value)} />
+<input type='number' id="fontSizeInput" value={fontSize} onChange={(e)=>setFontSize(e.target.value)} />
+<input type='number' id="paddingInput" value={padding} onChange={(e)=>setPadding(e.target.value)}  />
+
+        {/* add input elememnts inside here */}
+      </div>
+ <Preview  content={content} padding={padding+'px'} fontSize={fontSize+'px'}  />
+ {/* render Preview component here */}
+ 
     </div>
-  );
+  )
 }
+
 
 export default App;
